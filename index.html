@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Jojo</title>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+<style>
+
+body{
+    background: black;
+    color: #00ff88;
+    font-family: monospace;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-direction:column;
+    height:100vh;
+    overflow:hidden;
+    font-size: 22px;
+}
+
+.container{
+    text-align:center;
+    max-width:700px;
+    padding:20px;
+}
+
+#typing{
+    white-space: pre-line;
+    border-right:2px solid #00ff88;
+    overflow:hidden;
+    display:inline-block;
+    animation: blink 0.8s infinite;
+    text-align:left;
+    font-size: 18px;
+}
+
+@keyframes blink{
+    50%{
+        border-color: transparent;
+    }
+}
+
+.small{
+    margin-top:15px;
+    opacity:0.7;
+    font-size:14px;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>> Initializing Birthday Message...</h2>
+
+<div id="typing"></div>
+
+</div>
+
+<script>
+
+const text = `
+Hi.. Happy Birthday to my most beloved man ever. 💫
+
+May you always be blessed with a long life, happiness, peace, 
+and strength in every season you go through. 
+May your heart always feel full, your stomach never stay hungry, 
+and your nights always be filled with restful sleep. 
+I pray that your parents are always given smooth sustenance, 
+good health, and endless joy.
+
+May you and your family always be protected, strengthened, 
+and surrounded by love from the people around you. 
+And may every dream, hope, and desire you carry slowly 
+find its way into reality, one by one, like stars 
+finally reaching the sky they belong to.
+
+No matter what happens, I will always love you. 
+In your happiest days, your hardest moments, your tired nights, 
+your quiet battles, and even when you feel like you're at 
+your lowest point — I’ll still be here, staying beside you.
+
+Thank you for existing in my life and making it warmer in ways 
+words could never fully explain.
+
+Happy Birthday, my eternal love,
+for my Johannes Rafael William Rampengan. 🤍
+
+`;
+
+let i = 0;
+
+function typingEffect(){
+    if(i < text.length){
+        document.getElementById("typing").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typingEffect, 50);
+    }
+}
+
+typingEffect();
+
+</script>
+
+</body>
+</html>
